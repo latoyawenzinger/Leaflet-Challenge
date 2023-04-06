@@ -13,7 +13,10 @@ Each cirlce is also equipped with a pop-up that will display the Earthquakes:
     - Magnitude
     - Depth(km)
     
-    ![image](https://user-images.githubusercontent.com/115582691/230356518-ffd02216-2e75-4ed3-a193-a789f714b6fe.png)
+ ![image](https://user-images.githubusercontent.com/115582691/230356518-ffd02216-2e75-4ed3-a193-a789f714b6fe.png)
+ 
+ 
+ 
 
     
 
