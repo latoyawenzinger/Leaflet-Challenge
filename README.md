@@ -15,7 +15,7 @@ Each cirlce is also equipped with a pop-up that will display the Earthquake's:
     
  ![image](https://user-images.githubusercontent.com/115582691/230356518-ffd02216-2e75-4ed3-a193-a789f714b6fe.png)
  
- The color each cirlce represents the depth of the Earthquake where it began to rupture. 
+ The color of each cirlce represents the depth of the Earthquake where it began to rupture. 
  
 ![image](https://user-images.githubusercontent.com/115582691/230357317-45ac6cab-9c34-432d-827c-cc7260c16f4c.png)
 
