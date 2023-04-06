@@ -7,14 +7,14 @@ console.log(`${thirtyDays} - ${todaysDate}`)
 //api call url set-up
 var baseURL = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson';
 var days= `&starttime=${thirtyDays}&endtime=${todaysDate}`;
-var magnitude = '&minmagnitude=3'
+var magnitude = '&minmagnitude=2'
 
 // assemble query
 var url = baseURL + days + magnitude
 
 // function to determine marker size using location depth
 function markerSize(magnitude) {
-    return magnitude * 6000;
+    return magnitude * 8000;
 }
 
 function depthColor(depth) {
@@ -53,8 +53,8 @@ var overlayMaps = {
 
 // Create the map object with options.
 var myMap = L.map('map', {
-  center: [40.09, 100.71],
-  zoom: 3,
+  center: [40.09, -103.71],
+  zoom: 5,
   layers: [streetmap, Quakes]
 });
 
@@ -91,13 +91,17 @@ d3.json(url).then(function(response) {
     var Quakes = [];
     earthQuakes.forEach(earthQuake => Quakes.push(
         L.circle([earthQuake.geometry.coordinates[1], earthQuake.geometry.coordinates[0]], {
-        stroke: false,
+        stroke: true,
+        weight: 0.5,
+        opacity: 1,
         fillOpacity: 1,
-        color: '',
+        color: 'black',
         fillColor: depthColor(earthQuake.geometry.coordinates[2]),
         radius: markerSize(earthQuake.properties.mag)})
         .bindPopup('<h3><h3>Time: ' + new Date(earthQuake.properties.time).toLocaleString() + 
-        '<h3><h3>Magnitude: ' + earthQuake.properties.mag + '</h3>')
+        '<h3><h3>Location: ' + earthQuake.properties.place +
+        '<h3><h3>Magnitude: ' + earthQuake.properties.mag + '</h3>' +
+        '<h3><h3>Depth: ' + earthQuake.geometry.coordinates[2] + '</h3>')
         ));
 
     
